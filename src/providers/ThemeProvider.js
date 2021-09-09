@@ -27,7 +27,6 @@ const ThemeProviderWrapper = ({ children }) => {
     <AppContext.Provider value={value}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-
         {children}
       </ThemeProvider>
     </AppContext.Provider>

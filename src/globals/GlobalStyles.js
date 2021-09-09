@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import backgroundStars from '../assets/background-stars.svg';
 
 const GlobalStyle = createGlobalStyle`
   *, *::after,*::before{
@@ -7,6 +8,13 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 10px;
   } 
+
+  html{
+    background-color: ${(p) => p.theme.black};
+    background-image: url(${backgroundStars});
+    background-position: center;
+    background-size: cover;
+  }
 
   body{
     font-family: 'Spartan', sans-serif; 
