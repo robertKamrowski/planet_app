@@ -6,7 +6,7 @@ const H1 = styled.h1`
 `;
 
 const App = () => {
-  return <H1>planet app</H1>;
+  return <H1>app</H1>;
 };
 
 export default App;

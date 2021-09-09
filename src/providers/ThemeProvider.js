@@ -1,4 +1,9 @@
+import React, { createContext } from 'react';
 import { ThemeProvider } from 'styled-components';
+import planetsData from '../assets/data.json';
+import GlobalStyles from '../globals/GlobalStyles';
+
+export const AppContext = createContext();
 
 const theme = {
   bialy: '#FFFFFF',
@@ -15,8 +20,18 @@ const theme = {
   blue: '#2D68F0',
 };
 
+const value = { planetsData };
+
 const ThemeProviderWrapper = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <AppContext.Provider value={value}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+
+        {children}
+      </ThemeProvider>
+    </AppContext.Provider>
+  );
 };
 
 export default ThemeProviderWrapper;
