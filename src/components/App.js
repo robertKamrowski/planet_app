@@ -15,7 +15,6 @@ const App = () => {
       <Router>
         <Header />
       </Router>
-      <div>planets content there</div>
     </AppWrapper>
   );
 };

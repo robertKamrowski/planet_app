@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import ArrowIcon from './Arrow';
 import Line from '../../Line';
 import { AppContext } from '../../../providers/AppProvider';
+import backgroundStars from '../../../assets/background-stars.svg';
 
 const StyledMenu = styled.menu`
   position: fixed;
@@ -16,6 +17,8 @@ const StyledMenu = styled.menu`
   flex-direction: column;
   justify-content: space-between;
   background-color: ${(p) => p.theme.black};
+  background-image: url(${backgroundStars});
+  background-size: cover;
   transition: 0.3s;
   transform: ${(p) => (p.isOpened ? 'scale(1)' : 'scale(0)')};
 `;
