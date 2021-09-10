@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Spartan', sans-serif; 
     font-size: 1.4rem;
     line-height: 2.5rem;
+    color: ${(p) => p.theme.white};
   }
 
   h1{
