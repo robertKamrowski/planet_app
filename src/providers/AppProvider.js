@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import planetsData from '../assets/data.json';
 import GlobalStyles from '../globals/GlobalStyles';
@@ -20,9 +20,15 @@ const theme = {
   blue: '#2D68F0',
 };
 
-const value = { planetsData };
+const AppProvider = ({ children }) => {
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-const ThemeProviderWrapper = ({ children }) => {
+  const toggleMenuOpen = () => {
+    setIsMenuOpened((prevIsMenuOpened) => !prevIsMenuOpened);
+  };
+
+  const value = { planetsData, isMenuOpened, toggleMenuOpen };
+
   return (
     <AppContext.Provider value={value}>
       <ThemeProvider theme={theme}>
@@ -33,4 +39,4 @@ const ThemeProviderWrapper = ({ children }) => {
   );
 };
 
-export default ThemeProviderWrapper;
+export default AppProvider;

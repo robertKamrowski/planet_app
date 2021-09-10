@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import GlobalStyles from './globals/GlobalStyles';
-import ThemeProviderWrapper from './providers/ThemeProvider';
+import AppProvider from './providers/AppProvider';
 
 ReactDOM.render(
-  <ThemeProviderWrapper>
-    <GlobalStyles />
+  <AppProvider>
     <App />
-  </ThemeProviderWrapper>,
+  </AppProvider>,
   document.getElementById('root')
 );

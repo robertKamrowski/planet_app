@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import ArrowIcon from './Arrow';
 import Line from '../../Line';
+import { AppContext } from '../../../providers/AppProvider';
 
 const StyledMenu = styled.menu`
   position: fixed;
@@ -15,6 +16,8 @@ const StyledMenu = styled.menu`
   flex-direction: column;
   justify-content: space-between;
   background-color: ${(p) => p.theme.black};
+  transition: 0.3s;
+  transform: ${(p) => (p.isOpened ? 'scale(1)' : 'scale(0)')};
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -52,58 +55,60 @@ const PlanetName = styled.span`
 `;
 
 const Menu = () => {
+  const { isMenuOpened, toggleMenuOpen } = useContext(AppContext);
+
   return (
-    <StyledMenu>
-      <StyledNavLink to="/mercury">
+    <StyledMenu isOpened={isMenuOpened}>
+      <StyledNavLink to="/mercury" onClick={toggleMenuOpen}>
         <Circle color="#DEF4FC" />
         <PlanetName>mercury</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/venus">
+      <StyledNavLink to="/venus" onClick={toggleMenuOpen}>
         <Circle color="#F7CC7F" />
         <PlanetName>venus</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/">
+      <StyledNavLink to="/" onClick={toggleMenuOpen}>
         <Circle color="#545BFE" />
         <PlanetName>earth</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/mars">
+      <StyledNavLink to="/mars" onClick={toggleMenuOpen}>
         <Circle color="#FF6A45" />
         <PlanetName>mars</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/jupiter">
+      <StyledNavLink to="/jupiter" onClick={toggleMenuOpen}>
         <Circle color="#ECAD7A" />
         <PlanetName>jupiter</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/saturn">
+      <StyledNavLink to="/saturn" onClick={toggleMenuOpen}>
         <Circle color="#FCCB6B" />
         <PlanetName>saturn</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/uranus">
+      <StyledNavLink to="/uranus" onClick={toggleMenuOpen}>
         <Circle color="#65F0D5" />
         <PlanetName>uranus</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/neptune">
+      <StyledNavLink to="/neptune" onClick={toggleMenuOpen}>
         <Circle color="#497EFA" />
         <PlanetName>neptune</PlanetName>
         <ArrowIcon />
