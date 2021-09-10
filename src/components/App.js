@@ -12,8 +12,10 @@ const AppWrapper = styled.div`
 const App = () => {
   return (
     <AppWrapper>
-      <Header />
-      <Router>planets components there</Router>
+      <Router>
+        <Header />
+      </Router>
+      <div>planets content there</div>
     </AppWrapper>
   );
 };

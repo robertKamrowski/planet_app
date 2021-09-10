@@ -2,7 +2,6 @@ import React, { createContext } from 'react';
 import { ThemeProvider } from 'styled-components';
 import planetsData from '../assets/data.json';
 import GlobalStyles from '../globals/GlobalStyles';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 export const AppContext = createContext();
 
@@ -27,10 +26,8 @@ const ThemeProviderWrapper = ({ children }) => {
   return (
     <AppContext.Provider value={value}>
       <ThemeProvider theme={theme}>
-        <Router>
-          <GlobalStyles />
-          {children}
-        </Router>
+        <GlobalStyles />
+        {children}
       </ThemeProvider>
     </AppContext.Provider>
   );

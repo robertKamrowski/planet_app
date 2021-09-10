@@ -7,7 +7,7 @@ import Line from '../../Line';
 const StyledMenu = styled.menu`
   position: fixed;
   height: 531px;
-  top: 68px;
+  top: 69px;
   left: 0px;
   right: 0px;
   padding: 44px 24px 0 24px;
@@ -15,7 +15,6 @@ const StyledMenu = styled.menu`
   flex-direction: column;
   justify-content: space-between;
   background-color: ${(p) => p.theme.black};
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const StyledNavLink = styled(NavLink)`
