@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import ArrowIcon from './Arrow';
 import Line from '../../Line';
 import { AppContext } from '../../../providers/AppProvider';
-import backgroundStars from '../../../assets/background-stars.svg';
 
 const StyledMenu = styled.menu`
   position: fixed;
