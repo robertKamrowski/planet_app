@@ -8,37 +8,55 @@ import backgroundStars from '../../../assets/background-stars.svg';
 
 const StyledMenu = styled.menu`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 531px;
   top: 69px;
   left: 0px;
   right: 0px;
   padding: 44px 24px 0 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: ${(p) => p.theme.black};
-  background-image: url(${backgroundStars});
   background-size: cover;
   transition: 0.3s;
   transform: ${(p) => (p.isOpened ? 'scale(1)' : 'scale(0)')};
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    position: unset;
+    transform: scale(1);
+    height: 25px;
+    width: 100%;
+    transition: unset;
+    padding: 0;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
   display: block;
   position: relative;
-  list-style: none;
   height: 40px;
+  list-style: none;
   text-decoration: none;
+
+  @media (min-width: 768px) {
+    position: unset;
+    height: unset;
+  }
 `;
 
 const Circle = styled.div`
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  background-color: ${(p) => p.color};
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: ${(p) => p.color};
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const PlanetName = styled.span`
@@ -55,6 +73,16 @@ const PlanetName = styled.span`
   color: ${(p) => p.theme.white};
   letter-spacing: 0.13rem;
   font-style: normal;
+
+  @media (min-width: 768px) {
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    opacity: 0.75;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 const Menu = () => {

@@ -13,6 +13,13 @@ const StyledHeader = styled.header`
   padding: 16px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background-color: ${(p) => p.theme.black};
+
+  @media (min-width: 768px) {
+    height: 158px;
+    padding: 32px 51.5px 27px 51.5px;
+    flex-direction: column;
+    background-color: transparent;
+  }
 `;
 
 const StyledTitle = styled.h1`

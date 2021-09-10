@@ -6,6 +6,11 @@ const Burger = styled.div`
   width: 24px;
   height: 17px;
   right: 24px;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const BurgerIcon = () => {

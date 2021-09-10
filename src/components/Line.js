@@ -6,6 +6,10 @@ const StyledLine = styled.div`
   height: 1px;
   background: ${(p) => p.theme.white};
   opacity: 0.2;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Line = () => <StyledLine></StyledLine>;

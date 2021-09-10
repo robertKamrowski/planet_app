@@ -9,6 +9,10 @@ const Arrow = styled.div`
   width: 6px;
   height: 8px;
   opacity: 0.8;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const ArrowIcon = () => {
