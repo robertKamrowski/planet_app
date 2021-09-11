@@ -22,7 +22,7 @@ const theme = {
 
 const AppProvider = ({ children }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const [currentPlanet, setCurrentPlanet] = useState(planetsData[2]);
+  const [currentPlanet, setCurrentPlanet] = useState(planetsData[0]);
 
   const toggleMenuOpen = () => {
     setIsMenuOpened((prevIsMenuOpened) => !prevIsMenuOpened);

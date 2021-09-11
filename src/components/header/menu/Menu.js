@@ -103,7 +103,7 @@ const Menu = () => {
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/earth" onClick={toggleMenuOpen}>
         <Circle color="#545BFE" />
         <PlanetName>earth</PlanetName>
         <ArrowIcon />
