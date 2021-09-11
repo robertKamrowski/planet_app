@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { useLocation } from 'react-router';
+import { useLocation, useRouteMatch } from 'react-router';
 import { AppContext } from '../../providers/AppProvider';
 import PlanetButtons from './PlanetButtons';
 
@@ -10,11 +10,9 @@ const MainPlanetPanel = () => {
   const { planetsData, currentPlanet, setCurrentPlanet } =
     useContext(AppContext);
 
-  const location = useLocation();
-  console.log(location.pathname);
-  let planetName = location.pathname.replace('/', '');
+  const { url } = useRouteMatch();
+  let planetName = url.replace('/', '');
   planetName = planetName.charAt(0).toUpperCase() + planetName.slice(1);
-  console.log(planetName);
 
   useEffect(() => {
     for (let i = 0; i < planetsData.length; i++) {
@@ -27,8 +25,7 @@ const MainPlanetPanel = () => {
   return (
     <MainPanelWrapper>
       <PlanetButtons />
-      <h1>{currentPlanet.name}</h1>
-      <p>{currentPlanet.overview.content}</p>
+      <p>{currentPlanet.name}</p>
       <p>{currentPlanet.overview.source}</p>
     </MainPanelWrapper>
   );

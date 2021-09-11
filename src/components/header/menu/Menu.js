@@ -89,56 +89,56 @@ const Menu = () => {
 
   return (
     <StyledMenu isOpened={isMenuOpened}>
-      <StyledNavLink to="/mercury" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/mercury/overview" onClick={toggleMenuOpen}>
         <Circle color="#DEF4FC" />
         <PlanetName>mercury</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/venus" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/venus/overview" onClick={toggleMenuOpen}>
         <Circle color="#F7CC7F" />
         <PlanetName>venus</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/earth" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/earth/overview" onClick={toggleMenuOpen}>
         <Circle color="#545BFE" />
         <PlanetName>earth</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/mars" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/mars/overview" onClick={toggleMenuOpen}>
         <Circle color="#FF6A45" />
         <PlanetName>mars</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/jupiter" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/jupiter/overview" onClick={toggleMenuOpen}>
         <Circle color="#ECAD7A" />
         <PlanetName>jupiter</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/saturn" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/saturn/overview" onClick={toggleMenuOpen}>
         <Circle color="#FCCB6B" />
         <PlanetName>saturn</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/uranus" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/uranus/overview" onClick={toggleMenuOpen}>
         <Circle color="#65F0D5" />
         <PlanetName>uranus</PlanetName>
         <ArrowIcon />
       </StyledNavLink>
       <Line />
 
-      <StyledNavLink to="/neptune" onClick={toggleMenuOpen}>
+      <StyledNavLink to="/neptune/overview" onClick={toggleMenuOpen}>
         <Circle color="#497EFA" />
         <PlanetName>neptune</PlanetName>
         <ArrowIcon />
