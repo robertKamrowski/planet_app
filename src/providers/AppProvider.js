@@ -22,13 +22,19 @@ const theme = {
 
 const AppProvider = ({ children }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [currentPlanet, setCurrentPlanet] = useState(planetsData[2]);
 
   const toggleMenuOpen = () => {
     setIsMenuOpened((prevIsMenuOpened) => !prevIsMenuOpened);
   };
 
-  const value = { planetsData, isMenuOpened, toggleMenuOpen };
-
+  const value = {
+    planetsData,
+    isMenuOpened,
+    toggleMenuOpen,
+    currentPlanet,
+    setCurrentPlanet,
+  };
   return (
     <AppContext.Provider value={value}>
       <ThemeProvider theme={theme}>
