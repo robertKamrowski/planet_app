@@ -1,10 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { useLocation, useRouteMatch } from 'react-router';
+import { useRouteMatch } from 'react-router';
 import { AppContext } from '../../providers/AppProvider';
-import PlanetButtons from './PlanetButtons';
+import PlanetDetailsButtons from './PlanetButtons';
+import PlanetDescription from './planetDescription/PlanetDescription';
 
-const MainPanelWrapper = styled.main``;
+const MainPanelWrapper = styled.main`
+  min-width: 375px;
+  margin: 0 auto;
+  position: relative;
+`;
 
 const MainPlanetPanel = () => {
   const { planetsData, currentPlanet, setCurrentPlanet } =
@@ -24,9 +29,8 @@ const MainPlanetPanel = () => {
 
   return (
     <MainPanelWrapper>
-      <PlanetButtons />
-      <p>{currentPlanet.name}</p>
-      <p>{currentPlanet.overview.source}</p>
+      <PlanetDetailsButtons />
+      <PlanetDescription currentPlanet={currentPlanet} />
     </MainPanelWrapper>
   );
 };

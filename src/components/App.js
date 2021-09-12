@@ -6,9 +6,7 @@ import MainPanel from './mainPanel/MainPlanetPanel';
 import MainPanelStarter from './mainPanel/MainPanelStarter';
 
 const AppWrapper = styled.div`
-  width: 375px;
   height: 950px;
-  width: 100%;
 `;
 
 const App = () => {

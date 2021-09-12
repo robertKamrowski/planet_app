@@ -13,6 +13,7 @@ const StyledHeader = styled.header`
   padding: 16px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background-color: ${(p) => p.theme.black};
+  z-index: 999;
 
   @media (min-width: 768px) {
     height: 158px;

@@ -29,7 +29,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const PlanetButtons = () => {
+const PlanetDetailsButtons = () => {
   let { url } = useRouteMatch();
   const getPlanetColor = (planetName) => planetName.slice(1);
 
@@ -48,4 +48,4 @@ const PlanetButtons = () => {
   );
 };
 
-export default PlanetButtons;
+export default PlanetDetailsButtons;
