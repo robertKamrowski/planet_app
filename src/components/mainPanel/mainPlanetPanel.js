@@ -5,6 +5,7 @@ import { AppContext } from '../../providers/AppProvider';
 import PlanetDetailsButtons from './PlanetButtons';
 import PlanetDescription from './planetDescription/PlanetDescription';
 import MathFacts from './planetMathFacts/MathFacts';
+import PlanetImage from './planetImage/planetImage';
 
 const MainPanelWrapper = styled.main`
   min-width: 375px;
@@ -31,6 +32,7 @@ const MainPlanetPanel = () => {
   return (
     <MainPanelWrapper>
       <PlanetDetailsButtons />
+      <PlanetImage currentPlanet={currentPlanet} />
       <PlanetDescription currentPlanet={currentPlanet} />
       <MathFacts currentPlanet={currentPlanet} />
     </MainPanelWrapper>
