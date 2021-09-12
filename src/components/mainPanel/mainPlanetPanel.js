@@ -4,6 +4,7 @@ import { useRouteMatch } from 'react-router';
 import { AppContext } from '../../providers/AppProvider';
 import PlanetDetailsButtons from './PlanetButtons';
 import PlanetDescription from './planetDescription/PlanetDescription';
+import MathFacts from './planetMathFacts/MathFacts';
 
 const MainPanelWrapper = styled.main`
   min-width: 375px;
@@ -31,6 +32,7 @@ const MainPlanetPanel = () => {
     <MainPanelWrapper>
       <PlanetDetailsButtons />
       <PlanetDescription currentPlanet={currentPlanet} />
+      <MathFacts currentPlanet={currentPlanet} />
     </MainPanelWrapper>
   );
 };
