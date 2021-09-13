@@ -8,9 +8,9 @@ import MathFacts from './planetMathFacts/MathFacts';
 import PlanetImage from './planetImage/planetImage';
 
 const MainPanelWrapper = styled.main`
-  min-width: 375px;
+  min-height: 100%;
   margin: 0 auto;
-  position: relative;
+  padding-bottom: 15px;
 `;
 
 const MainPlanetPanel = () => {

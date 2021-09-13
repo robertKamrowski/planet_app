@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     background-image: url(${backgroundStars});
     background-position: center;
     background-size: cover;
+    width: 100%;
   }
 
   body{

@@ -6,14 +6,12 @@ import Description from './Description';
 import SourceLink from './SourceLink';
 
 const StyledSection = styled.section`
-  width: 327px;
-  position: absolute;
-  top: 355px;
-  left: 24px;
   display: flex;
   flex-direction: column;
-  min-height: 235px;
   align-items: center;
+  min-height: 235px;
+  width: 80%;
+  margin: 15px auto;
 `;
 
 const PlanetDescription = ({ currentPlanet }) => {

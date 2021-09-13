@@ -3,16 +3,13 @@ import styled from 'styled-components';
 import SingleFact from './SingleMathFact';
 
 const MathFactsWrapper = styled.section`
-  height: 20px;
-  position: absolute;
-  top: 618px;
-  left: 24px;
-  width: 327px;
+  width: 80%;
   height: 216px;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 28px;
+  margin: 32px auto;
 `;
 
 const MathFacts = ({ currentPlanet }) => {

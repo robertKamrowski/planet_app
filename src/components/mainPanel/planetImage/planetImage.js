@@ -4,22 +4,25 @@ import { Switch, Route, useRouteMatch } from 'react-router';
 
 const PlanetImageWrapper = styled.section`
   width: 100%;
-  min-height: 305px;
+  min-height: 304px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const StyledPlanetImage = styled.img`
+  display: block;
+  position: relative;
   width: ${(p) => `${p.width}px`};
 `;
 
 const StyledPlanetGeology = styled.img`
-  width: ${(p) => `${p.width}px`};
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
+  width: ${(p) => `${p.width}px`};
 `;
 
 const PlanetImage = ({ currentPlanet }) => {
@@ -68,7 +71,7 @@ const PlanetImage = ({ currentPlanet }) => {
             src={currentPlanet.images.planet}
             width={width}
             alt="Image of structure of a planet."
-          ></StyledPlanetImage>
+          />
           <StyledPlanetGeology
             src={currentPlanet.images.geology}
             alt="geology of a planet"

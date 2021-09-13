@@ -8,23 +8,23 @@ const StyledSingleFact = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 11px 24px;
-  text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
 `;
 
 const StyledFactName = styled.p`
-  opacity: 0.5;
-  letter-spacing: 0.07rem;
   font-size: 0.8rem;
   line-height: 1.6rem;
   font-weight: bold;
+  letter-spacing: 0.07rem;
+  opacity: 0.5;
 `;
 
 const StyledFactValue = styled.p`
-  font-size: 2rem;
-  letter-spacing: -0.08rem;
   font-family: 'Antonio';
+  font-size: 2rem;
   line-height: 2.6rem;
+  letter-spacing: -0.08rem;
 `;
 
 const SingleFact = ({ factName, value }) => {

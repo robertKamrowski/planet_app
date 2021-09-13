@@ -4,12 +4,12 @@ import BurgerIcon from './BurgerMenu';
 import Menu from './menu/Menu';
 
 const StyledHeader = styled.header`
+  width: 100%;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding: 16px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background-color: ${(p) => p.theme.black};

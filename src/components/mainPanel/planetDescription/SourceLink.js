@@ -4,21 +4,21 @@ import linkIcon from '../../../assets/icon-source.svg';
 
 const StyledLinWrapper = styled.div`
   width: 100%;
+  height: 25px;
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25px;
-  margin-top: 32px;
-  opacity: 0.5;
   font-size: 1.2rem;
   line-height: 2.5rem;
+  opacity: 0.5;
 `;
 
 const StyledLink = styled.a`
-  color: #fff;
-  font-weight: bold;
   margin-left: 5px;
+  font-weight: bold;
   letter-spacing: 0.05rem;
+  color: #fff;
 `;
 
 const StyledArrow = styled.img`

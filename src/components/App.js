@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './header/Header';
-import MainPanel from './mainPanel/MainPlanetPanel';
+import MainPlanetPanel from './mainPanel/MainPlanetPanel';
 import MainPanelStarter from './mainPanel/MainPanelStarter';
 
 const AppWrapper = styled.div`
-  height: 950px;
+  min-height: 950px;
 `;
 
 const App = () => {
@@ -16,14 +16,14 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/" exact component={MainPanelStarter} />
-          <Route path="/earth" component={MainPanel} />
-          <Route path="/mercury" component={MainPanel} />
-          <Route path="/venus" component={MainPanel} />
-          <Route path="/mars" component={MainPanel} />
-          <Route path="/jupiter" component={MainPanel} />
-          <Route path="/saturn" component={MainPanel} />
-          <Route path="/uranus" component={MainPanel} />
-          <Route path="/neptune" component={MainPanel} />
+          <Route path="/earth" component={MainPlanetPanel} />
+          <Route path="/mercury" component={MainPlanetPanel} />
+          <Route path="/venus" component={MainPlanetPanel} />
+          <Route path="/mars" component={MainPlanetPanel} />
+          <Route path="/jupiter" component={MainPlanetPanel} />
+          <Route path="/saturn" component={MainPlanetPanel} />
+          <Route path="/uranus" component={MainPlanetPanel} />
+          <Route path="/neptune" component={MainPlanetPanel} />
         </Switch>
       </Router>
     </AppWrapper>

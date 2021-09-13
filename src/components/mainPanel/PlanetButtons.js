@@ -6,22 +6,20 @@ const MenuWrapper = styled.menu`
   width: 100%;
   height: 50px;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `;
 
 const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: ${(p) => p.theme.white};
-  text-transform: uppercase;
   font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  height: 100%;
   line-height: 50px;
-  padding: 0 5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
   opacity: 0.5;
+  padding: 0 5px;
+  color: ${(p) => p.theme.white};
 
   &.active {
     opacity: 1;
