@@ -24,8 +24,12 @@ const AppProvider = ({ children }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [currentPlanet, setCurrentPlanet] = useState(planetsData[0]);
 
-  const toggleMenuOpen = () => {
+  const toggleMenuOpen = (value) => {
     setIsMenuOpened((prevIsMenuOpened) => !prevIsMenuOpened);
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const value = {

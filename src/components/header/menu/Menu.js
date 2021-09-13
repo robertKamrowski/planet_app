@@ -6,35 +6,35 @@ import Line from '../../Line';
 import { AppContext } from '../../../providers/AppProvider';
 
 const StyledMenu = styled.menu`
+  width: 100%;
+  height: calc(100% - 69px);
   position: fixed;
+  top: 69px;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 531px;
-  top: 69px;
-  left: 0px;
-  right: 0px;
-  padding: 44px 24px 0 24px;
-  background-size: cover;
-  transition: 0.3s;
+  padding: 32px 24px;
+  transition: 0.4s;
   transform: ${(p) => (p.isOpened ? 'scale(1)' : 'scale(0)')};
+  /* background-color: ${(p) => p.theme.black}; */
 
   @media (min-width: 768px) {
+    width: 100%;
+    height: 25px;
+    position: unset;
     display: flex;
     flex-direction: row;
-    position: unset;
-    transform: scale(1);
-    height: 25px;
-    width: 100%;
-    transition: unset;
     padding: 0;
+    transform: scale(1);
+    transition: unset;
   }
 `;
 
 const StyledNavLink = styled(NavLink)`
-  display: block;
-  position: relative;
   height: 40px;
+  position: relative;
+  display: block;
   list-style: none;
   text-decoration: none;
 
@@ -49,8 +49,8 @@ const Circle = styled.div`
   height: 20px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   border-radius: 50%;
+  transform: translateY(-50%);
   background-color: ${(p) => p.color};
 
   @media (min-width: 768px) {
@@ -63,24 +63,23 @@ const PlanetName = styled.span`
   position: absolute;
   left: 45px;
   top: 50%;
-  transform: translateY(-45%);
-  line-height: 2.5rem;
+  font-family: 'Spartan';
   font-size: 1.5rem;
   font-weight: bold;
+  line-height: 2.5rem;
   text-transform: uppercase;
-  font-family: 'Spartan';
   color: ${(p) => p.theme.white};
   letter-spacing: 0.13rem;
-  font-style: normal;
+  transform: translateY(-45%);
 
   @media (min-width: 768px) {
     position: unset;
     top: unset;
     left: unset;
-    transform: unset;
     opacity: 0.75;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
+    transform: unset;
   }
 `;
 

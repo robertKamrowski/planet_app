@@ -11,10 +11,12 @@ const MainPanelWrapper = styled.main`
   min-height: 100%;
   margin: 0 auto;
   padding-bottom: 15px;
+  transition: 0.4s;
+  transform: ${(p) => (p.menuOpened ? `scale(0)` : 'scale(1)')};
 `;
 
 const MainPlanetPanel = () => {
-  const { planetsData, currentPlanet, setCurrentPlanet } =
+  const { planetsData, currentPlanet, setCurrentPlanet, isMenuOpened } =
     useContext(AppContext);
 
   const { url } = useRouteMatch();
@@ -30,7 +32,7 @@ const MainPlanetPanel = () => {
   }, [planetName]);
 
   return (
-    <MainPanelWrapper>
+    <MainPanelWrapper menuOpened={isMenuOpened}>
       <PlanetDetailsButtons />
       <PlanetImage currentPlanet={currentPlanet} />
       <PlanetDescription currentPlanet={currentPlanet} />
