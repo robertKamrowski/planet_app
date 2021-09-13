@@ -5,7 +5,7 @@ import { AppContext } from '../../providers/AppProvider';
 import PlanetDetailsButtons from './PlanetButtons';
 import PlanetDescription from './planetDescription/PlanetDescription';
 import MathFacts from './planetMathFacts/MathFacts';
-import PlanetImage from './planetImage/planetImage';
+import PlanetImage from './planetImage/PlanetImage';
 
 const MainPanelWrapper = styled.main`
   min-height: 100%;

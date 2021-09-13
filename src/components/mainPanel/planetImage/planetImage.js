@@ -8,21 +8,22 @@ const PlanetImageWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const StyledPlanetImage = styled.img`
+  width: ${(p) => `${p.width}px`};
   display: block;
   position: relative;
-  width: ${(p) => `${p.width}px`};
 `;
 
 const StyledPlanetGeology = styled.img`
   display: block;
+  width: ${(p) => `${p.width}px`};
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: ${(p) => `${p.width}px`};
+  transform: translateX(-50%);
 `;
 
 const PlanetImage = ({ currentPlanet }) => {
