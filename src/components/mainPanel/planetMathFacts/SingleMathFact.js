@@ -10,6 +10,14 @@ const StyledSingleFact = styled.div`
   padding: 11px 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    height: 100%;
+    flex-basis: 164px;
+    flex-direction: column;
+    padding: 17.5px 16px;
+    align-items: flex-start;
+  }
 `;
 
 const StyledFactName = styled.p`
@@ -25,6 +33,11 @@ const StyledFactValue = styled.p`
   font-size: 2rem;
   line-height: 2.6rem;
   letter-spacing: -0.08rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+  }
 `;
 
 const SingleFact = ({ factName, value }) => {

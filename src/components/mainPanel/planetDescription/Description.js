@@ -9,6 +9,11 @@ const StyledParagraph = styled.p`
   font-size: 1.1rem;
   line-height: 2.2rem;
   opacity: 0.8;
+
+  @media (min-width: 768px) {
+    margin-top: 24px;
+    text-align: left;
+  }
 `;
 
 const Description = ({ content }) => (

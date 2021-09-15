@@ -12,6 +12,11 @@ const StyledLinWrapper = styled.div`
   font-size: 1.2rem;
   line-height: 2.5rem;
   opacity: 0.5;
+
+  @media (min-width: 768px) {
+    margin-top: 32px;
+    justify-content: flex-start;
+  }
 `;
 
 const StyledLink = styled.a`

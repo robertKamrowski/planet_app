@@ -12,6 +12,14 @@ const StyledSection = styled.section`
   min-height: 235px;
   width: 80%;
   margin: 15px auto;
+
+  @media (min-width: 768px) {
+    width: 339px;
+    min-height: 253px;
+    height: 280px;
+    margin: -208px auto auto 39px;
+    align-items: flex-start;
+  }
 `;
 
 const PlanetDescription = ({ currentPlanet }) => {

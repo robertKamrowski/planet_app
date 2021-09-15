@@ -13,6 +13,13 @@ const MainPanelWrapper = styled.main`
   padding-bottom: 15px;
   transition: 0.4s;
   transform: ${(p) => (p.menuOpened ? `scale(0)` : 'scale(1)')};
+
+  @media (min-width: 768px) {
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+  }
 `;
 
 const MainPlanetPanel = () => {

@@ -10,6 +10,13 @@ const MathFactsWrapper = styled.section`
   flex-direction: column;
   justify-content: space-between;
   margin: 32px auto;
+
+  @media (min-width: 768px) {
+    width: 90%;
+    max-width: 100%;
+    flex-direction: row;
+    height: 88px;
+  }
 `;
 
 const MathFacts = ({ currentPlanet }) => {
