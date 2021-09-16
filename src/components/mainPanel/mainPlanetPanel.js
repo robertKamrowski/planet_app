@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { useRouteMatch } from 'react-router';
+import { useRouteMatch } from 'react-router-dom';
 import { AppContext } from '../../providers/AppProvider';
 import PlanetDetailsButtons from './featureButtons/PlanetButtons';
 import PlanetDescription from './planetDescription/PlanetDescription';

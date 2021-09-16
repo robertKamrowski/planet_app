@@ -6,7 +6,8 @@ import MainPlanetPanel from './mainPanel/MainPlanetPanel';
 import MainPanelStarter from './mainPanel/MainPanelStarter';
 
 const AppWrapper = styled.div`
-  min-height: 950px;
+  /* min-height: 950px; */
+  min-height: 100vh;
 `;
 
 const App = () => {

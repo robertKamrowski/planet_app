@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Route, Switch, useRouteMatch } from 'react-router';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import Title from './Title';
 import Description from './Description';
 import SourceLink from './SourceLink';

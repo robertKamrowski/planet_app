@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Switch, Route, useRouteMatch } from 'react-router';
+import { Switch, Route } from 'react-router';
+import { useRouteMatch } from 'react-router';
 import { AppContext } from '../../../providers/AppProvider';
 
 const PlanetImageWrapper = styled.section`
