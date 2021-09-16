@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import planetsData from '../assets/data.json';
 import GlobalStyles from '../globals/GlobalStyles';
@@ -20,11 +20,33 @@ const theme = {
   neptune: '#2D68F0',
 };
 
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // handler to set window width value:
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Initial function call, so state gets updated with initial window size
+    handleResize();
+
+    // event listener on window:
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the listener:
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowWidth;
+}
+
 const AppProvider = ({ children }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [currentPlanet, setCurrentPlanet] = useState(planetsData[0]);
 
-  const toggleMenuOpen = (value) => {
+  const toggleMenuOpen = () => {
     setIsMenuOpened((prevIsMenuOpened) => !prevIsMenuOpened);
     window.scroll({
       top: 0,
@@ -38,6 +60,7 @@ const AppProvider = ({ children }) => {
     toggleMenuOpen,
     currentPlanet,
     setCurrentPlanet,
+    useWindowWidth,
   };
   return (
     <AppContext.Provider value={value}>

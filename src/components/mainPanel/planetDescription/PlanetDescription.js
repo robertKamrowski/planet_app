@@ -20,6 +20,16 @@ const StyledSection = styled.section`
     margin: -208px auto auto 39px;
     align-items: flex-start;
   }
+
+  @media (min-width: 1440px) {
+    width: 350px;
+    height: initial;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const PlanetDescription = ({ currentPlanet }) => {

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRouteMatch } from 'react-router';
 import { AppContext } from '../../providers/AppProvider';
-import PlanetDetailsButtons from './PlanetButtons';
+import PlanetDetailsButtons from './featureButtons/PlanetButtons';
 import PlanetDescription from './planetDescription/PlanetDescription';
 import MathFacts from './planetMathFacts/MathFacts';
 import PlanetImage from './planetImage/PlanetImage';
@@ -19,6 +19,13 @@ const MainPanelWrapper = styled.main`
     display: flex;
     flex-direction: column;
     max-width: 900px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 1110px;
+    min-height: calc(100vh - 85px);
+    display: block;
+    position: relative;
   }
 `;
 

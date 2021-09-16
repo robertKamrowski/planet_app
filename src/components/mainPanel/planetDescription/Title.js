@@ -7,6 +7,11 @@ const StyledTitle = styled.h2`
     font-size: 4.8rem;
     line-height: 6.2rem;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 8rem;
+    line-height: 10.4rem;
+  }
 `;
 
 const Title = ({ planetName }) => <StyledTitle>{planetName}</StyledTitle>;

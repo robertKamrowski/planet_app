@@ -18,6 +18,11 @@ const StyledSingleFact = styled.div`
     padding: 17.5px 16px;
     align-items: flex-start;
   }
+
+  @media (min-width: 1440px) {
+    flex-basis: 255px;
+    padding: 20px 23px;
+  }
 `;
 
 const StyledFactName = styled.p`
@@ -26,6 +31,11 @@ const StyledFactName = styled.p`
   font-weight: bold;
   letter-spacing: 0.07rem;
   opacity: 0.5;
+
+  @media (min-width: 1440px) {
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+  }
 `;
 
 const StyledFactValue = styled.p`
@@ -37,6 +47,11 @@ const StyledFactValue = styled.p`
   @media (min-width: 768px) {
     font-size: 2.4rem;
     line-height: 3.1rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 4rem;
+    line-height: 5.2rem;
   }
 `;
 

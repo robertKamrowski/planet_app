@@ -14,6 +14,11 @@ const StyledParagraph = styled.p`
     margin-top: 24px;
     text-align: left;
   }
+
+  @media (min-width: 1440px) {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
 `;
 
 const Description = ({ content }) => (

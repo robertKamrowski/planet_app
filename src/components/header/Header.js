@@ -19,7 +19,13 @@ const StyledHeader = styled.header`
     height: 158px;
     padding: 32px 51.5px 27px 51.5px;
     flex-direction: column;
-    background-color: transparent;
+  }
+
+  @media (min-width: 1440px) {
+    height: 85px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 40px 0 32px;
   }
 `;
 

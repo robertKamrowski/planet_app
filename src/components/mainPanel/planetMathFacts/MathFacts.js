@@ -14,8 +14,18 @@ const MathFactsWrapper = styled.section`
   @media (min-width: 768px) {
     width: 90%;
     max-width: 100%;
-    flex-direction: row;
     height: 88px;
+    flex-direction: row;
+  }
+
+  @media (min-width: 1440px) {
+    width: 100%;
+    height: 128px;
+    position: absolute;
+    top: 729px;
+    left: 0;
+    padding: 0;
+    margin: 0;
   }
 `;
 

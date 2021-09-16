@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components';
 import { Switch, Route, useRouteMatch } from 'react-router';
+import { AppContext } from '../../../providers/AppProvider';
 
 const PlanetImageWrapper = styled.section`
   width: 100%;
@@ -13,6 +14,16 @@ const PlanetImageWrapper = styled.section`
   @media (min-width: 768px) {
     order: -1;
     min-height: 460px;
+  }
+
+  @media (min-width: 1440px) {
+    width: calc(100% - 350px);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    order: unset;
   }
 `;
 
@@ -30,28 +41,6 @@ const StyledPlanetGeology = styled.img`
   left: 50%;
   transform: translateX(-50%);
 `;
-
-function useWindowWith() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    // handler to set window width value:
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Initial function call, so state gets updated with initial window size
-    handleResize();
-
-    // event listener on window:
-    window.addEventListener('resize', handleResize);
-
-    // Clean up the listener:
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowWidth;
-}
 
 const handleImgSize = (url, windowWidth) => {
   let output;
@@ -120,7 +109,8 @@ const PlanetImage = ({
     images: { planet, internal, geology },
   },
 }) => {
-  const windowWidth = useWindowWith();
+  const { useWindowWidth } = useContext(AppContext);
+  const windowWidth = useWindowWidth();
   const { url } = useRouteMatch();
 
   return (

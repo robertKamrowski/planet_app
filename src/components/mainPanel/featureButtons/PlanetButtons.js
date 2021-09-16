@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink, useRouteMatch } from 'react-router-dom';
 import styled from 'styled-components';
+import SingleButtonContent from './SingleButtonContent';
 
-const MenuWrapper = styled.menu`
+const Wrapper = styled.menu`
   width: 100%;
   height: 50px;
   display: flex;
@@ -10,12 +11,22 @@ const MenuWrapper = styled.menu`
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (min-width: 768px) {
-    flex-direction: column;
     width: 36.5%;
     height: 152px;
-    border-bottom: none;
-    margin: 56px 40px auto auto;
+    flex-direction: column;
     justify-content: space-between;
+    margin: 56px 40px auto auto;
+    border-bottom: none;
+  }
+
+  @media (min-width: 1440px) {
+    width: 350px;
+    max-width: 350px;
+    height: 176px;
+    position: absolute;
+    top: 456px;
+    right: 0;
+    margin: 0;
   }
 `;
 
@@ -38,8 +49,6 @@ const StyledNavLink = styled(NavLink)`
   @media (min-width: 768px) {
     height: 40px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: unset;
-    /* line-height: 2.5rem; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -47,6 +56,19 @@ const StyledNavLink = styled(NavLink)`
 
     &.active {
       background-color: ${(p) => p.theme[p.color]};
+      border-bottom: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    height: 48px;
+    font-size: 1.2rem;
+    letter-spacing: 0.25rem;
+    transition: 0.3s;
+
+    &:hover:not(.active) {
+      background-color: rgba(216, 216, 216, 0.4);
+      opacity: 1;
     }
   }
 `;
@@ -58,6 +80,9 @@ const StyledNumber = styled.span`
     display: block;
     margin-right: 17px;
   }
+  @media (min-width: 1440px) {
+    margin-right: 25px;
+  }
 `;
 
 const PlanetDetailsButtons = () => {
@@ -65,20 +90,23 @@ const PlanetDetailsButtons = () => {
   const getPlanetColor = (planetName) => planetName.slice(1);
 
   return (
-    <MenuWrapper>
+    <Wrapper>
       <StyledNavLink color={getPlanetColor(url)} to={`${url}/overview`}>
         <StyledNumber>01</StyledNumber>
-        Overview
+        <SingleButtonContent content="Overview" longContent="Overview" />
       </StyledNavLink>
       <StyledNavLink color={getPlanetColor(url)} to={`${url}/structure`}>
         <StyledNumber>02</StyledNumber>
-        Structure
+        <SingleButtonContent
+          content="Structure"
+          longContent="Internal Structure"
+        />
       </StyledNavLink>
       <StyledNavLink color={getPlanetColor(url)} to={`${url}/surface`}>
         <StyledNumber>03</StyledNumber>
-        Surface
+        <SingleButtonContent content="Surface" longContent="Surface Geology" />
       </StyledNavLink>
-    </MenuWrapper>
+    </Wrapper>
   );
 };
 
