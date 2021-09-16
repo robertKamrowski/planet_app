@@ -11,8 +11,8 @@ const EntranceComponentWrapper = styled.main`
   align-items: center;
   padding: 60px 15px;
   position: relative;
-  transition: 0.4s;
-  transform: ${(p) => (p.isOpened ? 'scale(0)' : 'scale(1)')};
+  transition: transform 0.4s;
+  transform: ${(p) => (p.isOpened ? 'scale(0)' : '')};
 `;
 
 const StyledTitle = styled.h2`
@@ -80,8 +80,8 @@ const UserMessage = styled.p`
   transform: ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
   background-color: #fff;
   color: #000;
-  padding: 5px 10px;
-  border-radius: 10px;
+  padding: 8px 15px;
+  border-radius: 15px;
   font-size: 1.4rem;
 `;
 

@@ -6,14 +6,13 @@ import MainPlanetPanel from './mainPanel/MainPlanetPanel';
 import MainPanelStarter from './mainPanel/MainPanelStarter';
 
 const AppWrapper = styled.div`
-  /* min-height: 950px; */
   min-height: 100vh;
 `;
 
 const App = () => {
   return (
     <AppWrapper>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Header />
         <Switch>
           <Route path="/" exact component={MainPanelStarter} />
