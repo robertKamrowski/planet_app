@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ArrowIcon from './Arrow';
 import Line from '../../Line';
 import { AppContext } from '../../../providers/AppProvider';
@@ -112,6 +112,7 @@ const PlanetName = styled.span`
 
 const Menu = () => {
   const { isMenuOpened, toggleMenuOpen } = useContext(AppContext);
+  const { pathname } = useLocation();
 
   return (
     <StyledMenu isOpened={isMenuOpened}>
@@ -119,6 +120,13 @@ const Menu = () => {
         color="#DEF4FC"
         to="/mercury/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          [
+            '/mercury/overview',
+            '/mercury/structure',
+            '/mercury/surface',
+          ].includes(pathname)
+        }
       >
         <Circle color="#DEF4FC" />
         <PlanetName>mercury</PlanetName>
@@ -130,6 +138,11 @@ const Menu = () => {
         color="#F7CC7F"
         to="/venus/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          ['/venus/overview', '/venus/structure', '/venus/surface'].includes(
+            pathname
+          )
+        }
       >
         <Circle color="#F7CC7F" />
         <PlanetName>venus</PlanetName>
@@ -141,6 +154,11 @@ const Menu = () => {
         color="#545BFE"
         to="/earth/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          ['/earth/overview', '/earth/structure', '/earth/surface'].includes(
+            pathname
+          )
+        }
       >
         <Circle color="#545BFE" />
         <PlanetName>earth</PlanetName>
@@ -152,6 +170,11 @@ const Menu = () => {
         color="#FF6A45"
         to="/mars/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          ['/mars/overview', '/mars/structure', '/mars/surface'].includes(
+            pathname
+          )
+        }
       >
         <Circle color="#FF6A45" />
         <PlanetName>mars</PlanetName>
@@ -163,6 +186,13 @@ const Menu = () => {
         color="#ECAD7A"
         to="/jupiter/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          [
+            '/jupiter/overview',
+            '/jupiter/structure',
+            '/jupiter/surface',
+          ].includes(pathname)
+        }
       >
         <Circle color="#ECAD7A" />
         <PlanetName>jupiter</PlanetName>
@@ -174,6 +204,11 @@ const Menu = () => {
         color="#FCCB6B"
         to="/saturn/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          ['/saturn/overview', '/saturn/structure', '/saturn/surface'].includes(
+            pathname
+          )
+        }
       >
         <Circle color="#FCCB6B" />
         <PlanetName>saturn</PlanetName>
@@ -185,6 +220,11 @@ const Menu = () => {
         color="#65F0D5"
         to="/uranus/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          ['/uranus/overview', '/uranus/structure', '/uranus/surface'].includes(
+            pathname
+          )
+        }
       >
         <Circle color="#65F0D5" />
         <PlanetName>uranus</PlanetName>
@@ -196,6 +236,13 @@ const Menu = () => {
         color="#497EFA"
         to="/neptune/overview"
         onClick={toggleMenuOpen}
+        isActive={() =>
+          [
+            '/neptune/overview',
+            '/neptune/structure',
+            '/neptune/surface',
+          ].includes(pathname)
+        }
       >
         <Circle color="#497EFA" />
         <PlanetName>neptune</PlanetName>
