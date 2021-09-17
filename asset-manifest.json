@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/planet_app/static/js/main.8d0640a7.chunk.js",
-    "main.js.map": "/planet_app/static/js/main.8d0640a7.chunk.js.map",
+    "main.js": "/planet_app/static/js/main.ca376f60.chunk.js",
+    "main.js.map": "/planet_app/static/js/main.ca376f60.chunk.js.map",
     "runtime-main.js": "/planet_app/static/js/runtime-main.f2a86222.js",
     "runtime-main.js.map": "/planet_app/static/js/runtime-main.f2a86222.js.map",
-    "static/js/2.e71d1aff.chunk.js": "/planet_app/static/js/2.e71d1aff.chunk.js",
-    "static/js/2.e71d1aff.chunk.js.map": "/planet_app/static/js/2.e71d1aff.chunk.js.map",
+    "static/js/2.e26f5f5e.chunk.js": "/planet_app/static/js/2.e26f5f5e.chunk.js",
+    "static/js/2.e26f5f5e.chunk.js.map": "/planet_app/static/js/2.e26f5f5e.chunk.js.map",
     "index.html": "/planet_app/index.html",
-    "static/js/2.e71d1aff.chunk.js.LICENSE.txt": "/planet_app/static/js/2.e71d1aff.chunk.js.LICENSE.txt",
+    "static/js/2.e26f5f5e.chunk.js.LICENSE.txt": "/planet_app/static/js/2.e26f5f5e.chunk.js.LICENSE.txt",
     "static/media/background-stars.f6233a6a.svg": "/planet_app/static/media/background-stars.f6233a6a.svg",
     "static/media/geology-earth.61d2b324.png": "/planet_app/static/media/geology-earth.61d2b324.png",
     "static/media/geology-jupiter.93e4e021.png": "/planet_app/static/media/geology-jupiter.93e4e021.png",
@@ -38,7 +38,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f2a86222.js",
-    "static/js/2.e71d1aff.chunk.js",
-    "static/js/main.8d0640a7.chunk.js"
+    "static/js/2.e26f5f5e.chunk.js",
+    "static/js/main.ca376f60.chunk.js"
   ]
 }
