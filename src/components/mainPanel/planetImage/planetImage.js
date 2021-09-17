@@ -4,6 +4,34 @@ import { Switch, Route } from 'react-router';
 import { useRouteMatch } from 'react-router';
 import { AppContext } from '../../../providers/AppProvider';
 
+// planets imgs:
+import Mercury from '../../../assets/planet-mercury.svg';
+import Venus from '../../../assets/planet-venus.svg';
+import Earth from '../../../assets/planet-earth.svg';
+import Mars from '../../../assets/planet-mars.svg';
+import Jupiter from '../../../assets/planet-jupiter.svg';
+import Saturn from '../../../assets/planet-saturn.svg';
+import Uranus from '../../../assets/planet-uranus.svg';
+import Neptune from '../../../assets/planet-neptune.svg';
+// internals structure imgs:
+import MercuryInternal from '../../../assets/planet-mercury-internal.svg';
+import VenusInternal from '../../../assets/planet-venus-internal.svg';
+import EarthInternal from '../../../assets/planet-earth-internal.svg';
+import MarsInternal from '../../../assets/planet-mars-internal.svg';
+import JupiterInternal from '../../../assets/planet-jupiter-internal.svg';
+import SaturnInternal from '../../../assets/planet-saturn-internal.svg';
+import UranusInternal from '../../../assets/planet-uranus-internal.svg';
+import NeptuneInternal from '../../../assets/planet-neptune-internal.svg';
+// planets geology:
+import MercuryGeology from '../../../assets/geology-mercury.png';
+import VenusGeology from '../../../assets/geology-venus.png';
+import EarthGeology from '../../../assets/geology-earth.png';
+import MarsGeology from '../../../assets/geology-mars.png';
+import JupiterGeology from '../../../assets/geology-jupiter.png';
+import SaturnGeology from '../../../assets/geology-saturn.png';
+import UranusGeology from '../../../assets/geology-uranus.png';
+import NeptuneGeology from '../../../assets/geology-neptune.png';
+
 const PlanetImageWrapper = styled.section`
   width: 100%;
   min-height: 304px;
@@ -43,6 +71,7 @@ const StyledPlanetGeology = styled.img`
   transform: translateX(-50%);
 `;
 
+// Returns property img size depends on screen width dynamically:
 const handleImgSize = (url, windowWidth) => {
   let output;
   if (url === '/mercury') {
@@ -105,21 +134,64 @@ const handleImgSize = (url, windowWidth) => {
   return output;
 };
 
-const PlanetImage = ({
-  currentPlanet: {
-    images: { planet, internal, geology },
-  },
-}) => {
-  const { useWindowWidth } = useContext(AppContext);
+// Imported planets to use:
+const importedPlanets = {
+  planet: [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune],
+  internal: [
+    MercuryInternal,
+    VenusInternal,
+    EarthInternal,
+    MarsInternal,
+    JupiterInternal,
+    SaturnInternal,
+    UranusInternal,
+    NeptuneInternal,
+  ],
+  geology: [
+    MercuryGeology,
+    VenusGeology,
+    EarthGeology,
+    MarsGeology,
+    JupiterGeology,
+    SaturnGeology,
+    UranusGeology,
+    NeptuneGeology,
+  ],
+};
+
+const PlanetImage = () => {
+  const { useWindowWidth, planetsData } = useContext(AppContext);
   const windowWidth = useWindowWidth();
   const { url } = useRouteMatch();
+
+  // Returns property img depends on url and path
+  const getPlanetImg = (url, path) => {
+    let planetName = url.replace('/', '');
+    planetName = planetName.charAt(0).toUpperCase() + planetName.slice(1);
+
+    for (let i = 0; i < planetsData.length; i++) {
+      if (path === `${url}/overview`) {
+        if (planetName === planetsData[i].name)
+          return importedPlanets.planet[i];
+      } else if (path === `${url}/structure`) {
+        if (planetName === planetsData[i].name)
+          return importedPlanets.internal[i];
+      } else if (path === `${url}/surface`) {
+        if (planetName === planetsData[i].name)
+          return importedPlanets.planet[i];
+      } else {
+        if (planetName === planetsData[i].name)
+          return importedPlanets.geology[i];
+      }
+    }
+  };
 
   return (
     <PlanetImageWrapper>
       <Switch>
         <Route path={`${url}/overview`}>
           <StyledPlanetImage
-            src={planet}
+            src={getPlanetImg(url, `${url}/overview`)}
             imageWidth={handleImgSize(url, windowWidth)}
             alt="Image of a planet."
           />
@@ -127,7 +199,7 @@ const PlanetImage = ({
 
         <Route path={`${url}/structure`}>
           <StyledPlanetImage
-            src={internal}
+            src={getPlanetImg(url, `${url}/structure`)}
             imageWidth={handleImgSize(url, windowWidth)}
             alt="Image of structure of a planet."
           />
@@ -135,12 +207,12 @@ const PlanetImage = ({
 
         <Route path={`${url}/surface`}>
           <StyledPlanetImage
-            src={planet}
+            src={getPlanetImg(url, `${url}/surface`)}
             imageWidth={handleImgSize(url, windowWidth)}
             alt="Image of structure of a planet."
           />
           <StyledPlanetGeology
-            src={geology}
+            src={getPlanetImg(url, 'geology')}
             alt="geology of a planet"
             imageWidth={handleImgSize(undefined, windowWidth)}
           />
