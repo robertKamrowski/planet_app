@@ -56,7 +56,7 @@ const BurgerIcon = () => {
     </svg>
   );
 
-  return <Burger onClick={toggleMenuOpen}>{icon}</Burger>;
+  return <Burger onClick={toggleMenuOpen}> {icon}</Burger>;
 };
 
 export default BurgerIcon;

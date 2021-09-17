@@ -13,17 +13,40 @@ const EntranceComponentWrapper = styled.main`
   position: relative;
   transition: transform 0.4s;
   transform: ${(p) => (p.isOpened ? 'scale(0)' : '')};
-  overflow-x: hidden;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: calc(100vh - 158px);
+    padding: 60px 100px;
+  }
 `;
 
 const StyledTitle = styled.h2`
   font-family: 'Space Mono';
   margin-bottom: 10px;
+  text-align: center;
   & .Typewriter {
     color: ${({ theme }) => theme.white};
     &__wrapper,
     &__cursor {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    min-height: 140px;
+    margin-bottom: 50px;
+    & .Typewriter__wrapper,
+    & .Typewriter__cursor {
+      font-size: 4.2rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 42%;
+    & .Typewriter__wrapper,
+    & .Typewriter__cursor {
+      font-size: 4.8rem;
     }
   }
 `;
@@ -36,7 +59,7 @@ const AppDescription = styled.p`
   transition: transform 0.7s;
   transform: ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
   text-align: center;
-  .afraid {
+  .curious {
     font-size: 1.4rem;
     font-weight: bold;
   }
@@ -45,6 +68,23 @@ const AppDescription = styled.p`
     font-size: 1.8rem;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    line-height: 3rem;
+    font-size: ${({ primary }) => (primary ? '2.6rem' : '2.2rem')};
+    margin-bottom: ${({ primary }) => (primary ? '45px' : '')};
+    .curious {
+      font-size: 2.2rem;
+    }
+    .space-word {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 50%;
+    line-height: 4rem;
   }
 `;
 
@@ -62,12 +102,26 @@ const RocketImage = styled.img`
   width: 80px;
   animation: ${flyAround} 6s linear infinite;
   position: absolute;
-  top: 65%;
+  top: 63%;
+
+  @media (min-width: 768px) {
+    width: 120px;
+    top: 67%;
+  }
+  @media (min-width: 1440px) {
+    top: 70%;
+  }
 `;
 
 const MainPanelStarter = () => {
   const [active, setActive] = useState(false);
-  const { isMenuOpened, toggleMenuOpen } = useContext(AppContext);
+  const { isMenuOpened, toggleMenuOpen, useWindowWidth } =
+    useContext(AppContext);
+
+  const entranceMessage =
+    useWindowWidth() >= 768
+      ? 'Choose a planet you want to explore!'
+      : 'Click Rocket to start!';
 
   return (
     <EntranceComponentWrapper isOpened={isMenuOpened}>
@@ -79,7 +133,7 @@ const MainPanelStarter = () => {
               .callFunction(() => setActive(true))
               .pauseFor(1500)
               .deleteAll()
-              .typeString('Click Rocket to start!')
+              .typeString(entranceMessage)
               .start();
           }}
         />
@@ -91,13 +145,13 @@ const MainPanelStarter = () => {
       </AppDescription>
 
       <AppDescription active={active}>
-        And if you're <span className="afraid">as curious</span> as me, It would
-        be awesome to take a look at our solar system planets with their
-        features!
+        And if you're as <span className="curious">curious</span> as me, it
+        would be awesome to take a look at our solar system planets with their
+        breathtaking features !
       </AppDescription>
 
       <RocketImage
-        onClick={toggleMenuOpen}
+        onClick={useWindowWidth() >= 768 ? null : toggleMenuOpen}
         src={rocket}
         alt="Picture of a spaceship rocket."
       />
