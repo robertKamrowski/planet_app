@@ -19,12 +19,14 @@ const MainPanelWrapper = styled.main`
     display: flex;
     flex-direction: column;
     max-width: 900px;
+    padding: 30px;
   }
 
   @media (min-width: 1440px) {
     max-width: 1110px;
     min-height: calc(100vh - 85px);
     display: block;
+    padding-bottom: 45px;
     position: relative;
   }
 `;
