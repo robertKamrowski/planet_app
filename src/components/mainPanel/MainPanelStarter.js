@@ -9,15 +9,16 @@ const EntranceComponentWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 15px;
+  padding: 20px 15px;
   position: relative;
   transition: transform 0.4s;
   transform: ${(p) => (p.isOpened ? 'scale(0)' : '')};
+  overflow-x: hidden;
 `;
 
 const StyledTitle = styled.h2`
   font-family: 'Space Mono';
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   & .Typewriter {
     color: ${({ theme }) => theme.white};
     &__wrapper,
@@ -49,40 +50,19 @@ const AppDescription = styled.p`
 
 const flyAround = keyframes`
  from{
-  transform: rotate(360deg) translateX(150px) ;
+  transform: rotate(360deg) translateX(90px);
  }
  to{
-  transform: rotate(0) translateX(150px) ;
+  transform: rotate(0) translateX(90px);
  }
 `;
 
 const RocketImage = styled.img`
   display: block;
   width: 80px;
-  animation: ${flyAround} 10s linear infinite;
+  animation: ${flyAround} 6s linear infinite;
   position: absolute;
-  top: 32%;
-  left: 40%;
-`;
-
-const RocketSquare = styled.div`
-  width: 100%;
-  flex-grow: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const UserMessage = styled.p`
-  transform: scale(0);
-  transition: transform 1.5s;
-  transform: ${({ active }) => (active ? 'scale(1)' : 'scale(0)')};
-  background-color: #fff;
-  color: #000;
-  padding: 8px 15px;
-  border-radius: 15px;
-  font-size: 1.4rem;
+  top: 65%;
 `;
 
 const MainPanelStarter = () => {
@@ -95,30 +75,32 @@ const MainPanelStarter = () => {
         <Typewriter
           onInit={(writer) => {
             writer
-              .typeString('Welcome to the Solar System!')
+              .typeString('Welcome to the Space!')
               .callFunction(() => setActive(true))
+              .pauseFor(1500)
+              .deleteAll()
+              .typeString('Click Rocket to start!')
               .start();
           }}
         />
       </StyledTitle>
+
       <AppDescription primary active={active}>
         Hey! <br /> It seems you're in
         <span className="space-word"> space!</span>
       </AppDescription>
+
       <AppDescription active={active}>
         And if you're <span className="afraid">as curious</span> as me, It would
         be awesome to take a look at our solar system planets with their
         features!
       </AppDescription>
 
-      <RocketSquare>
-        <UserMessage active={active}>Click a Rocket to start!</UserMessage>
-        <RocketImage
-          onClick={toggleMenuOpen}
-          src={rocket}
-          alt="Picture of a spaceship rocket."
-        />
-      </RocketSquare>
+      <RocketImage
+        onClick={toggleMenuOpen}
+        src={rocket}
+        alt="Picture of a spaceship rocket."
+      />
     </EntranceComponentWrapper>
   );
 };
