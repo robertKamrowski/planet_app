@@ -12,12 +12,16 @@ const EntranceComponentWrapper = styled.main`
   padding: 20px 15px;
   position: relative;
   transition: transform 0.4s;
-  transform: ${(p) => (p.isOpened ? 'scale(0)' : '')};
+  transform: ${({ isOpened }) => (isOpened ? 'scale(0)' : '')};
   overflow: hidden;
 
   @media (min-width: 768px) {
     height: calc(100vh - 158px);
     padding: 60px 100px;
+  }
+
+  @media (min-width: 1440px) {
+    height: calc(100vh - 85px);
   }
 `;
 
@@ -43,7 +47,7 @@ const StyledTitle = styled.h2`
   }
 
   @media (min-width: 1440px) {
-    width: 42%;
+    width: 50%;
     & .Typewriter__wrapper,
     & .Typewriter__cursor {
       font-size: 4.8rem;
@@ -110,6 +114,7 @@ const RocketImage = styled.img`
   }
   @media (min-width: 1440px) {
     top: 70%;
+    z-index: -999;
   }
 `;
 
