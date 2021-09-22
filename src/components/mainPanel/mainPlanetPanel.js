@@ -8,11 +8,10 @@ import MathFacts from './planetMathFacts/MathFacts';
 import PlanetImage from './planetImage/PlanetImage';
 
 const MainPanelWrapper = styled.main`
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding-bottom: 15px;
   transition: 0.4s;
-  transform: ${(p) => (p.menuOpened ? `scale(0)` : 'scale(1)')};
+  transform: ${({ menuOpened }) => (menuOpened ? `scale(0)` : 'scale(1)')};
 
   @media (min-width: 768px) {
     transform: scale(1);
@@ -24,9 +23,8 @@ const MainPanelWrapper = styled.main`
 
   @media (min-width: 1440px) {
     max-width: 1110px;
-    min-height: calc(100vh - 85px);
+    min-height: 890px;
     display: block;
-    padding-bottom: 45px;
     position: relative;
   }
 `;
