@@ -57,14 +57,14 @@ const PlanetImageWrapper = styled.section`
 `;
 
 const StyledPlanetImage = styled.img`
-  width: ${(p) => `${p.imageWidth}px`};
+  width: ${({ imageWidth }) => `${imageWidth}px`};
   display: block;
   position: relative;
 `;
 
 const StyledPlanetGeology = styled.img`
   display: block;
-  width: ${(p) => `${p.imageWidth}px`};
+  width: ${({ imageWidth }) => `${imageWidth}px`};
   position: absolute;
   top: 50%;
   left: 50%;
@@ -196,7 +196,6 @@ const PlanetImage = () => {
             alt="Image of a planet."
           />
         </Route>
-
         <Route path={`${url}/structure`}>
           <StyledPlanetImage
             src={getPlanetImg(url, `${url}/structure`)}
@@ -204,7 +203,6 @@ const PlanetImage = () => {
             alt="Image of structure of a planet."
           />
         </Route>
-
         <Route path={`${url}/surface`}>
           <StyledPlanetImage
             src={getPlanetImg(url, `${url}/surface`)}
