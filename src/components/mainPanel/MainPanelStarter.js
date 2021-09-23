@@ -106,7 +106,7 @@ const RocketImage = styled.img`
   width: 80px;
   animation: ${flyAround} 6s linear infinite;
   position: absolute;
-  top: 63%;
+  top: 60%;
 
   @media (min-width: 768px) {
     width: 120px;

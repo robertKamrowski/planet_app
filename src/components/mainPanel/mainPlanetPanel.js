@@ -43,7 +43,7 @@ const MainPlanetPanel = () => {
         setCurrentPlanet(planetsData[i]);
       }
     }
-  }, [planetName]);
+  }, [planetName]); //eslint-disable-line
 
   return (
     <MainPanelWrapper menuOpened={isMenuOpened}>
