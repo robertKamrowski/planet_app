@@ -29,9 +29,9 @@ const MathFactsWrapper = styled.section`
   }
 `;
 
-const MathFacts = ({ currentPlanet }) => {
-  const { rotation, revolution, radius, temperature } = currentPlanet;
-
+const MathFacts = ({
+  currentPlanet: { rotation, revolution, radius, temperature },
+}) => {
   return (
     <MathFactsWrapper>
       <SingleFact factName={'rotation time'} value={rotation} />

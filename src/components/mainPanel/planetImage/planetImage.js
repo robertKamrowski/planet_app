@@ -196,6 +196,7 @@ const PlanetImage = () => {
             alt="Image of a planet."
           />
         </Route>
+
         <Route path={`${url}/structure`}>
           <StyledPlanetImage
             src={getPlanetImg(url, `${url}/structure`)}
@@ -203,6 +204,7 @@ const PlanetImage = () => {
             alt="Image of structure of a planet."
           />
         </Route>
+
         <Route path={`${url}/surface`}>
           <StyledPlanetImage
             src={getPlanetImg(url, `${url}/surface`)}

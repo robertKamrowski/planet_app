@@ -39,11 +39,11 @@ const StyledNavLink = styled(NavLink)`
   letter-spacing: 0.2rem;
   opacity: 0.5;
   padding: 0 5px;
-  color: ${(p) => p.theme.white};
+  color: ${({ theme: { white } }) => white};
 
   &.active {
     opacity: 1;
-    border-bottom: 4px solid ${(p) => p.theme[p.color]};
+    border-bottom: 4px solid ${({ theme, color }) => theme[color]};
   }
 
   @media (min-width: 768px) {
@@ -55,7 +55,7 @@ const StyledNavLink = styled(NavLink)`
     padding: 7.5px 20px;
 
     &.active {
-      background-color: ${(p) => p.theme[p.color]};
+      background-color: ${({ theme, color }) => theme[color]};
       border-bottom: none;
     }
   }
@@ -87,7 +87,7 @@ const StyledNumber = styled.span`
 
 const PlanetDetailsButtons = () => {
   let { url } = useRouteMatch();
-  const getPlanetColor = (planetName) => planetName.slice(1);
+  const getPlanetColor = (planetName) => planetName.replace('/', '');
 
   return (
     <Wrapper>
